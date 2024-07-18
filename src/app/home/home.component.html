@@ -1,0 +1,147 @@
+
+  
+  
+
+    
+    <div class="f">
+
+
+    <div class="container">
+        <h1 class="title">Mabrains</h1>
+        <p class="subtitle">AI and Chip Design Consultancy</p>
+        <button class="help-button" (click)="scrollToSection('CONTACT')">How can we help you</button>
+
+    </div>
+
+
+
+    </div>
+   
+<div class="container py-5">
+    <h3 class="fancy-title" id="CONTACT" >Contact Us</h3>
+    <div class="">
+        <form [formGroup]="registerform" class="row" (ngSubmit)="handleform()">
+        <div class="col-md-4">
+                
+            <div class="mb-2">
+                <label for="name" >Name *</label>
+                <input type="text"  id="name"  formControlName="name"  class="form-control">
+            </div>
+            <div class="alert alert-danger " *ngIf="registerform.get('name')?.errors&&registerform.get('name')?.touched ">
+    
+                <p *ngIf="registerform.get('name')?.getError('required')">Name is Required</p>
+                <p *ngIf="registerform.get('name')?.getError('minlength')"> Name Min Length 3</p>
+                <p *ngIf="registerform.get('name')?.getError('maxlength')"> Name Max Length 20 </p>
+                    </div>
+        </div>
+        <div class="col-md-4">
+                
+            <div class="mb-2">
+                <label for="email" >Email *</label>
+                <input type="email"  id="email" formControlName="email"  class="form-control">
+            </div>
+      <div class="alert alert-danger " *ngIf="registerform.get('email')?.errors&&registerform.get('email')?.touched ">
+    
+        <p *ngIf="registerform.get('email')?.getError('required')">email is Required</p>
+        <p *ngIf="registerform.get('email')?.getError('email')">InValid Format</p>
+    
+            </div>
+        </div>
+        <div class="col-md-4">
+                   
+            <div class="mb-2">
+            <label for="phone" >Phone *</label>
+            <input   class="form-control" type="tel"formControlName="phone"  id="phone">
+            </div>
+            <div class="alert alert-danger " *ngIf="registerform.get('phone')?.errors&&registerform.get('phone')?.touched ">
+    
+                <p *ngIf="registerform.get('phone')?.getError('required')">phone is Required</p>
+                <p *ngIf="registerform.get('phone')?.getError('pattern')">
+                    accept only egypt phone numbers</p>
+            
+                    </div>
+        </div>
+        <div class="col-md-8">
+                
+            <div class="mb-2">
+            <label for="Subject" >Subject *</label>
+            <input type="Subject"  id="Subject"  class="form-control" formControlName="Subject">
+            </div>
+            <div class="alert alert-danger " *ngIf="registerform.get('Subject')?.errors&&registerform.get('Subject')?.touched ">
+    
+                <p *ngIf="registerform.get('Subject')?.getError('required')">Subject is Required</p>
+             
+                    </div>
+        </div>
+        <div class="col-md-4 mt-4 ">
+                   
+            <select id="contactusform-service" name="contactusform-service" class="form-select valid" aria-invalid="false"> <option value="">-- Select One --</option> <option value="">-- AI/ML Services --</option> <option value="data_minning">Data Mining</option> <option value="ts_pred">Time Series Analysis/Predition</option> <option value="adv_modeling">Advanced Data Modeling</option> <option value="custom_llm">Custom LLM</option> <option value="ml_modeling">Build Custom Model</option> <option value="image_classification">Image Classification</option> <option value="image_segmentation">Image Segmentation</option> <option value="">-- Hardware Services --</option> <option value="pdk_development">PDK Development</option> <option value="analog_design">Analog Design</option> <option value="digital_design">Digital Design</option> <option value="analog_verification">Analog Design Verification</option> <option value="digital_design_verification">Digital Design Verification</option> <option value="digital_design_verification">Digital Physical Design</option> <option value="analog_layout">Analog Layout</option> <option value="ams_modelling">AMS Modeling</option> </select>
+        </div>
+        <div class="col-md-12">
+            <div class="mb-2"> <div class="form-floating">
+                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 170px"></textarea>
+                <label for="floatingTextarea2">Message *</label>
+              </div></div>
+           </div>
+           <div class="col-md-7">     <div class="w-25 text-center"><button class="help-button " >Send Message</button></div></div>
+        </form>
+    </div>
+</div>
+
+<!-- <div class="container py-5">
+    <div class="row ">
+
+   
+            <div class="col-md-4">
+                
+                <div class="mb-2">
+                    <label for="email" >email:</label>
+                    <input type="email" formControlName="email" id="email"  class="form-control">
+                </div>
+          
+            </div>
+   
+   
+            <div class="col-md-4">
+                   
+                <div class="mb-2">
+                <label for="email" >email:</label>
+                <input type="email" formControlName="email" id="email"  class="form-control">
+              </div>
+            </div>
+  
+    
+            <div class="col-md-4">
+                   
+                <div class="mb-2">
+                <label for="email" >email:</label>
+                <input type="email" formControlName="email" id="email"  class="form-control">
+                </div>
+            </div>
+ 
+            <div class="col-md-8">
+                
+                <div class="mb-2">
+                <label for="email" >email:</label>
+                <input type="email" formControlName="email" id="email"  class="form-control">
+                </div>
+            </div>
+
+    <div class="col-md-4 mt-4 ">
+                   
+        <select id="contactusform-service" name="contactusform-service" class="form-select valid" aria-invalid="false"> <option value="">-- Select One --</option> <option value="">-- AI/ML Services --</option> <option value="data_minning">Data Mining</option> <option value="ts_pred">Time Series Analysis/Predition</option> <option value="adv_modeling">Advanced Data Modeling</option> <option value="custom_llm">Custom LLM</option> <option value="ml_modeling">Build Custom Model</option> <option value="image_classification">Image Classification</option> <option value="image_segmentation">Image Segmentation</option> <option value="">-- Hardware Services --</option> <option value="pdk_development">PDK Development</option> <option value="analog_design">Analog Design</option> <option value="digital_design">Digital Design</option> <option value="analog_verification">Analog Design Verification</option> <option value="digital_design_verification">Digital Design Verification</option> <option value="digital_design_verification">Digital Physical Design</option> <option value="analog_layout">Analog Layout</option> <option value="ams_modelling">AMS Modeling</option> </select>
+    </div>
+ 
+   <div class="col-md-12">
+    <div class="mb-2"> <div class="form-floating">
+        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+        <label for="floatingTextarea2">Comments</label>
+      </div></div>
+   </div>
+
+  
+   
+    </div>
+</div> -->
+
+
